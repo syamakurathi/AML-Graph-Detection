@@ -1,0 +1,22 @@
+# Datasets are obtained separately; see DATA.md
+/Data/
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Locally regenerated, account-level / graph artifacts
+HMPNN/hmpnn_results/graph.pt
+HMPNN/hmpnn_results/preprocessing.pkl
+
+# OS/editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+HMPNN/hmpnn_results/predictions.csv
+HMPNN/hmpnn_results/account_splits.csv
+HMPNN/hmpnn_results/sample_row_ids.csv

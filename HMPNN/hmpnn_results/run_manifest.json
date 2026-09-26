@@ -1,0 +1,65 @@
+{
+  "repository": "https://github.com/fredjo89/heterogeneous-mpnn",
+  "commit": "4f56e6a38a7e35fd186393c1849f2711392c908b",
+  "versions": {
+    "torch": "2.14.0",
+    "torch_geometric": "2.8.0.post1",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "seed": 42,
+  "max_rows": 100000,
+  "source_rows": 5078345,
+  "sample_rows": 100000,
+  "chunk_size": 250000,
+  "device": "cpu",
+  "layers": 2,
+  "max_epochs": 300,
+  "min_epochs": 50,
+  "patience": 30,
+  "learning_rate": 0.001,
+  "weight_decay": 1e-05,
+  "split": "static transductive stratified account split 60/20/20",
+  "target": "account participates in >=1 positive sampled transaction",
+  "thresholds": {
+    "LogisticRegression": 0.21240922808647156,
+    "HMPNN_sum": 0.041798971593379974,
+    "HMPNN_ct": 0.007188623771071434
+  },
+  "training": [
+    {
+      "model": "HMPNN_sum",
+      "best_epoch": 300,
+      "epochs_run": 300,
+      "hit_epoch_cap": true,
+      "best_validation_bce": 0.017861096188426018,
+      "parameters": 12693,
+      "training_seconds": 230.15265219999128
+    },
+    {
+      "model": "HMPNN_ct",
+      "best_epoch": 300,
+      "epochs_run": 300,
+      "hit_epoch_cap": true,
+      "best_validation_bce": 0.01297671813517809,
+      "parameters": 18953,
+      "training_seconds": 327.4611071999825
+    }
+  ],
+  "sources": {
+    "HI-Small_Trans.csv": {
+      "bytes": 475664283,
+      "sha256": "b19d39f515523373f991b689c07e11e7b0b95c17a2c27a87d91584ae16c5b040"
+    },
+    "HI-Small_accounts.csv": {
+      "bytes": 34053187,
+      "sha256": "786808526e33cfc441212dd6fccda7edfc24172149bed59c6ef59b186836b014"
+    }
+  },
+  "vendor_sha256": {
+    "models_HMPNN_ct.py": "2b76341b73e5fa7a48e7fde3fcf2387b7eddfdfe8003594a0acc7342a42ef298",
+    "models_HMPNN_sum.py": "362efbc4b8600b82b3331670628d4bb59e5d6920dc481de7039a996b8a5fe767"
+  }
+}
